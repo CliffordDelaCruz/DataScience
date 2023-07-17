@@ -50,3 +50,29 @@ num_friends_by_id.sort(
 # Each pair is (user_id, num_friends):
 # [(1, 3), (2, 3), (3, 3), (5, 3), (8, 3),
 # (0, 2), (4, 2), (6, 2), (7, 2), (9, 1)]
+
+#--------------------------------------------------------
+# Data Scientists you may know
+def foaf_ids_bad(user):
+    """foaf is short for "friend of a friend" """
+    return [foaf_id
+            for friend_id in friendships[user["id"]]
+            for foaf_id in friendships[friend_id]]
+
+print(friendships[0]) # [1, 2]
+print(friendships[1]) # [0, 2, 3]
+print(friendships[2]) # [0, 1, 3]
+
+from collections import Counter
+
+def friends_of_friends(user):
+    user_id = user["id"]
+    return Counter(
+        foaf_id
+        for friend_id in friendships[user_id]   # for each of my friends,
+        for foaf_id in friendships[friend_id]   # find their friends
+        if foaf_id != user_id                   # who aren't me
+        and foaf_id not in friendships[user_id] # and aren't my friends
+    )
+
+print(friends_of_friends(users[3]))             # Counter({0: 2, 5: 1})
