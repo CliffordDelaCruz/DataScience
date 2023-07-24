@@ -90,7 +90,7 @@ interests = [
     (2, "numpy"), (2, "statsmodels"), (2, "pandas"), (3, "R"), (3, "Python"),
     (3, "statistics"), (3, "regression"), (3, "probability"), 
     (4, "machine learning"), (4, "regression"), (4, "decision trees"), 
-    (4, "libsvm"), (5, "Python"), (5, "R"), (5, "Java"), (5, "C++")
+    (4, "libsvm"), (5, "Python"), (5, "R"), (5, "Java"), (5, "C++"),
     (5, "Haskell"), (5, "programming languages"), (6, "statistics"), 
     (6, "probability"), (6, "mathematics"), (6, "theory"), 
     (7, "machine learning"), (7, "scikit-learn"), (7, "Mahout"), 
@@ -131,10 +131,10 @@ def most_common_interests_with(user):
 #--------------------------------------------------------
 # Salaries and Experience
 
-salaries_and_tenures = [(83000, 8.7), (88000, 8.1)
-                        (48000, 0.7), (76000, 6)
-                        (69000, 6.5), (76000, 7.5)
-                        (60000, 2.5), (83000, 10)
+salaries_and_tenures = [(83000, 8.7), (88000, 8.1),
+                        (48000, 0.7), (76000, 6),
+                        (69000, 6.5), (76000, 7.5),
+                        (60000, 2.5), (83000, 10),
                         (48000, 1.9), (63000, 4.2)]
 
 # Keys are years, values are lists of the salaries for each tenure.
