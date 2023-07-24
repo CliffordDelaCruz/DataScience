@@ -139,7 +139,6 @@ salaries_and_tenures = [(83000, 8.7), (88000, 8.1)
 
 # Keys are years, values are lists of the salaries for each tenure.
 salary_by_tenure = defaultdict(list)
-
 for salary, tenure in salaries_and_tenures:
     salary_by_tenure[tenure].append(salary)
 
